@@ -5,15 +5,14 @@ import { Header } from "~/widgets/Header/Header"
 import styles from "./HomePage.module.scss"
 import { MainSection } from "./MainSection"
 import { CategoryListSection } from "./CategoryListSection"
+import { ProductGridSection } from "./ProductGridSection"
 
 export const HomePage: React.FC = () => {
     return (
         <div className={styles.root}>
-            <Header />
-            <div className={styles.list}>
-                <MainSection />
-                <CategoryListSection />
-            </div>
+            <MainSection />
+            <CategoryListSection />
+            <ProductGridSection />
         </div>
     )
 }
