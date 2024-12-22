@@ -1,0 +1,33 @@
+.root {
+    min-height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.logo {
+    width: 185px;
+    height: 41px;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    gap: 44px;
+}
+
+.action_list {
+    display: flex;
+    align-items: center;
+    gap: 44px;
+}
+
+$actionSize: 28px;
+
+.action {
+    width: $actionSize;
+    height: $actionSize;
+    background-color: #ccc;
+}

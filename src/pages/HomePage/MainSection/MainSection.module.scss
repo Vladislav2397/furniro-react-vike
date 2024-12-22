@@ -1,0 +1,60 @@
+.root {
+    background-color: #ccc;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.wrapper {
+    aspect-ratio: 1440/717;
+    width: 100%;
+    position: relative;
+    padding-top: 157px;
+    padding-bottom: 117px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.card {
+    max-width: 643px;
+    padding: 62px 43px 37px 39px;
+    background-color: #FFF3E3;
+    border-radius: 12px;
+    align-self: flex-end;
+    box-sizing: border-box;
+}
+
+.label {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.title {
+    color: #B88E2F;
+    font-weight: 700;
+    font-size: 52px;
+    line-height: 64px;
+    margin-bottom: 16px;
+}
+
+.description {
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 46px;
+}
+
+.action {
+    display: inline-block;
+    padding: 25px 72px;
+    text-transform: uppercase;
+    background-color: #B88E2F;
+    color: #fff;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 700;
+}

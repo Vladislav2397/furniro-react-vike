@@ -4,6 +4,8 @@ import { fork } from "effector";
 import { Provider } from "effector-react";
 import { usePageContext } from "vike-react/usePageContext";
 
+import '~/shared/styles/global.scss';
+
 export default function WrapperEffector({ children }: { children: React.ReactNode }) {
   const { scopeValues } = usePageContext();
 

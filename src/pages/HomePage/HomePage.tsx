@@ -1,19 +1,19 @@
 import React from "react"
 
-import { useUnit } from "effector-react/effector-react.mjs"
 import { Header } from "~/widgets/Header/Header"
 
-import * as model from "./model"
 import styles from "./HomePage.module.scss"
+import { MainSection } from "./MainSection"
+import { CategoryListSection } from "./CategoryListSection"
 
 export const HomePage: React.FC = () => {
-    const [initialized] = useUnit([model.$wasInitialized])
-
     return (
         <div className={styles.root}>
             <Header />
-            <h1>Home page</h1>
-            <p>Is initialized: {JSON.stringify(initialized)}</p>
+            <div className={styles.list}>
+                <MainSection />
+                <CategoryListSection />
+            </div>
         </div>
     )
 }
