@@ -17,6 +17,18 @@ const posts: Post[] = [
         title: 'Blog Post 1',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
         tag: 'Tag 1',
+    },
+    {
+        id: 2,
+        author: {
+            id: 1,
+            name: 'Admin',
+        },
+        coverUrl: '',
+        createdAt: '2020-02-01',
+        title: 'Blog Post 2',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        tag: 'Tag 2',
     }
 ]
 
