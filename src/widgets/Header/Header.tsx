@@ -13,7 +13,7 @@ export const Header: React.FC = () => {
             <nav className={styles.navigation}>
                 <Link href="/">Home</Link>
                 <Link href="/shop">Shop</Link>
-                <Link href="/about">About</Link>
+                <Link href="/blog">Blog</Link>
                 <Link href="/contact">Contact</Link>
             </nav>
             <div className={styles.action_list}>

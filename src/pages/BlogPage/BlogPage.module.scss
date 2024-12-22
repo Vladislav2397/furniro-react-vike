@@ -1,0 +1,30 @@
+.root {
+    //
+}
+
+.layout {
+    display: flex;
+    justify-content: space-between;
+    gap: 48px;
+    padding: 48px 100px;
+}
+
+.sidebar {
+    position: relative;
+    min-width: 300px;
+}
+
+.addition {
+    position: sticky;
+    top: 48px;
+    background-color: #ccc;
+    min-height: 48px;
+}
+
+.list {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+}
+
