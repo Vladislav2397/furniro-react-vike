@@ -15,17 +15,7 @@
 }
 
 .grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
     width: 100%;
-    gap: 32px;
-    margin-bottom: 32px;
-}
-
-.item {
-    border: 1px solid #000;
-    aspect-ratio: 285/446;
-    box-sizing: border-box;
 }
 
 .action {
