@@ -5,7 +5,8 @@
   "description": "Template for quickly starting a SSR Node.js application with vite, react, effector, and fastify",
   "packageManager": "pnpm@9.7.1+sha256.46f1bbc8f8020aa9869568c387198f1a813f21fb44c82f400e7d1dbde6c70b40",
   "scripts": {
-    "dev": "node --no-warnings --loader ts-node/esm server/index.ts",
+    "env:dev": "dotenvx run -f .env.development.local -f .env.development --",
+    "dev": "npm run env:dev -- node --no-warnings --loader ts-node/esm server/index.ts",
     "start": "cross-env NODE_ENV=production pnpm run server",
     "server": "node ./dist/cli/index",
     "build": "vite build && tsc -p server",
@@ -32,6 +33,7 @@
     "node": ">=18.6.0"
   },
   "dependencies": {
+    "@dotenvx/dotenvx": "^1.31.0",
     "@effector/reflect": "^9.2.0",
     "@fastify/accepts": "^4.3.0",
     "@fastify/compress": "^7.0.3",
@@ -51,6 +53,7 @@
     "pino": "^9.3.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "sass": "^1.83.0",
     "vike": "0.4.184",
     "vike-react": "^0.5.2",
     "zod": "^3.23.8"

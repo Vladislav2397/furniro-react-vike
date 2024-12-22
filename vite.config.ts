@@ -23,6 +23,9 @@ export default defineConfig({
       svgrOptions: {},
     }),
   ],
+  server: {
+    port: 5173
+  },
   define: {},
   resolve: {
     alias: {

@@ -1,3 +1,1 @@
-import { createPageStart } from "~/shared/init";
-
-export const pageStarted = createPageStart();
+export * from "~/pages/HomePage/init"
