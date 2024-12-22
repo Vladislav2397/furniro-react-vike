@@ -19,12 +19,16 @@ export type Product = {
 
 export type ProductCardProps = {
     product: Product
+    onClickOverlay?: () => void
     className?: string
 }
 
-export const ProductCard: React.FC<ProductCardProps> = ({ product, className }) => {
+export const ProductCard: React.FC<React.PropsWithChildren<ProductCardProps>> = ({ product, children, onClickOverlay, className }) => {
     return (
         <div className={clsx(styles.root, className)}>
+            <div className={styles.overlay}>
+                {children}
+            </div>
             <div className={styles.image}>
                 <img src={product.coverUrl} alt={'cover'} />
             </div>
@@ -47,5 +51,11 @@ const PriceAmount: React.FC<{ amount: Amount, oldAmount?: Amount }> = ({ amount,
 }
 
 function displayAmount(amount: Amount) {
-    return `${amount.value} ${amount.currency}`
+    const formatter = Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: amount.currency,
+        roundingMode: 'trunc',
+    })
+
+    return formatter.format(amount.value)
 }

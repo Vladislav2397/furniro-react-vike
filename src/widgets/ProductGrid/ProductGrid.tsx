@@ -2,9 +2,12 @@ import React from 'react'
 import styles from './ProductGrid.module.scss'
 import clsx from 'clsx'
 import { ProductCard, type Product } from '~/entities/product'
+import { AddToCartButton } from '~/features/cart/AddToCartButton'
+import { AddToFavoriteButton } from '~/features/cart/AddToFavoriteButton'
+import { Link } from '~/shared/routing'
 
 export type ProductGridProps = {
-className?: string
+    className?: string
 }
 
 export const ProductGrid: React.FC<ProductGridProps> = ({ className }) => {
@@ -26,14 +29,18 @@ export const ProductGrid: React.FC<ProductGridProps> = ({ className }) => {
     return (
         <div className={clsx(styles.root, className)}>
             <div className={styles.grid}>
-                <ProductCard className={styles.item} product={product} />
-                <ProductCard className={styles.item} product={product} />
-                <ProductCard className={styles.item} product={product} />
-                <ProductCard className={styles.item} product={product} />
-                <ProductCard className={styles.item} product={product} />
-                <ProductCard className={styles.item} product={product} />
-                <ProductCard className={styles.item} product={product} />
-                <ProductCard className={styles.item} product={product} />
+                {new Array(7).fill(0).map((_, index) => (
+                    <ProductCard key={index} className={styles.item} product={product}>
+                        <Link className={styles.actions} href={`/shop/${product.id}`}>
+                            <div className={styles.form}>
+                                <AddToCartButton product={product} />
+                                <div>
+                                    <AddToFavoriteButton product={product} />
+                                </div>
+                            </div>
+                        </Link>
+                    </ProductCard>
+                ))}
             </div>
         </div>
     )
