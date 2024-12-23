@@ -26,21 +26,16 @@ export const ProductGrid: React.FC<ProductGridProps> = ({ className }) => {
         coverUrl: 'https://via.placeholder.com/150',
     } as Product
 
+    const renderItem = (_: number, index: number) => (
+        <ProductCard key={index} className={styles.item} product={product}>
+            <AddToCartButton product={product} />
+        </ProductCard>
+    )
+
     return (
         <div className={clsx(styles.root, className)}>
             <div className={styles.grid}>
-                {new Array(7).fill(0).map((_, index) => (
-                    <ProductCard key={index} className={styles.item} product={product}>
-                        <Link className={styles.actions} href={`/shop/${product.id}`}>
-                            <div className={styles.form}>
-                                <AddToCartButton product={product} />
-                                <div>
-                                    <AddToFavoriteButton product={product} />
-                                </div>
-                            </div>
-                        </Link>
-                    </ProductCard>
-                ))}
+                {new Array(7).fill(0).map(renderItem)}
             </div>
         </div>
     )

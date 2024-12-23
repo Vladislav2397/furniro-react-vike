@@ -1,12 +1,7 @@
 import React from 'react'
 import styles from './ProductCard.module.scss'
 import clsx from 'clsx'
-
-type Currency = 'usd' | 'eur'
-type Amount = {
-    value: number
-    currency: Currency
-}
+import { Link } from '~/shared/routing'
 
 export type Product = {
     id: number
@@ -26,16 +21,18 @@ export type ProductCardProps = {
 export const ProductCard: React.FC<React.PropsWithChildren<ProductCardProps>> = ({ product, children, onClickOverlay, className }) => {
     return (
         <div className={clsx(styles.root, className)}>
-            <div className={styles.overlay}>
-                {children}
-            </div>
             <div className={styles.image}>
                 <img src={product.coverUrl} alt={'cover'} />
             </div>
             <div className={styles.content}>
-                <div className={styles.title}>{product.name}</div>
+                <Link href={`/shop/${product.id}`}>
+                    <div className={styles.title}>{product.name}</div>
+                </Link>
                 <div className={styles.description}>{product.description}</div>
                 <PriceAmount amount={product.price} oldAmount={product.oldPrice} />
+                <div onClick={e => e.stopPropagation()}>
+                    {children}
+                </div>
             </div>
         </div>
     )
