@@ -1,6 +1,6 @@
 import { createEffect, createEvent, sample } from "effector";
-import * as cartModel from '~/entities/cart/model'
 import { debug } from 'patronum'
+import * as cartModel from '~/entities/cart/model'
 
 const addToCartFx = createEffect(() => {})
 

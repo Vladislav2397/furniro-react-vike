@@ -35,6 +35,7 @@
   "dependencies": {
     "@dotenvx/dotenvx": "^1.31.0",
     "@effector/reflect": "^9.2.0",
+    "@farfetched/core": "^0.13.0",
     "@fastify/accepts": "^4.3.0",
     "@fastify/compress": "^7.0.3",
     "@fastify/cookie": "^9.3.1",
@@ -43,6 +44,7 @@
     "@fastify/helmet": "^11.1.1",
     "@fastify/rate-limit": "^9.1.0",
     "@fastify/static": "^7.0.4",
+    "@withease/contracts": "^1.1.0",
     "clsx": "^2.1.1",
     "compression": "^1.7.4",
     "dotenv": "^16.4.5",

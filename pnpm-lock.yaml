@@ -14,6 +14,9 @@ importers:
       '@effector/reflect':
         specifier: ^9.2.0
         version: 9.2.0(effector-react@23.2.1(effector@23.2.2)(react@18.3.1))(effector@23.2.2)(react@18.3.1)
+      '@farfetched/core':
+        specifier: ^0.13.0
+        version: 0.13.0(effector@23.2.2)
       '@fastify/accepts':
         specifier: ^4.3.0
         version: 4.3.0
@@ -38,6 +41,9 @@ importers:
       '@fastify/static':
         specifier: ^7.0.4
         version: 7.0.4
+      '@withease/contracts':
+        specifier: ^1.1.0
+        version: 1.1.0
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
@@ -572,6 +578,11 @@ packages:
     cpu: [x64]
     os: [win32]
 
+  '@farfetched/core@0.13.0':
+    resolution: {integrity: sha512-rA4SnJAEN1Y1uTFnqAKpb7m9UNOPTjcSrA8uFtsPyuKN1HeCauEPpDQ4inmgsM9rdpCfFnKDg5OFxWmUmFuPZQ==}
+    peerDependencies:
+      effector: ^23.0.0
+
   '@fastify/accept-negotiator@1.1.0':
     resolution: {integrity: sha512-OIHZrb2ImZ7XG85HXOONLcJWGosv7sIvM2ifAPQVhg9Lv7qdmMBNVaai4QTdyuaqbKM5eO6sLSQOYI7wEQeCJQ==}
     engines: {node: '>=14'}
@@ -1004,6 +1015,9 @@ packages:
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       vite: ^4.2.0 || ^5.0.0
+
+  '@withease/contracts@1.1.0':
+    resolution: {integrity: sha512-TwM/nMXUFaLTRT5MpJx1654L0PZGV1/hFr1Ykb9aUwdIAi5rnmLALyvSPaESjjzxwLOBQvlINQavFJpXITNaAw==}
 
   abort-controller@3.0.0:
     resolution: {integrity: sha512-h8lQ8tacZYnR3vNQTgibj+tODHI5/+l06Au2Pcriv/Gmet0eaj4TwWH41sO9wnHDiQsEj19q0drzdWdeAHtweg==}
@@ -2474,6 +2488,10 @@ snapshots:
   '@esbuild/win32-x64@0.21.5':
     optional: true
 
+  '@farfetched/core@0.13.0(effector@23.2.2)':
+    dependencies:
+      effector: 23.2.2
+
   '@fastify/accept-negotiator@1.1.0': {}
 
   '@fastify/accepts@4.3.0':
@@ -2912,6 +2930,8 @@ snapshots:
       vite: 5.4.1(@types/node@22.3.0)(sass@1.83.0)
     transitivePeerDependencies:
       - supports-color
+
+  '@withease/contracts@1.1.0': {}
 
   abort-controller@3.0.0:
     dependencies:
