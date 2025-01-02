@@ -5,6 +5,9 @@ export const MainSection: React.FC = () => {
     return (
         <div className={styles.root}>
             <div className={styles.wrapper}>
+                <div className={styles.image}>
+                    <img src="/images/1200x709/232323/FFFFFF.png" alt="banner" />
+                </div>
                 <div className={styles.card}>
                     <div className={styles.label}>New Arrival</div>
                     <div className={styles.title}>Discover Our New&nbsp;Collection</div>

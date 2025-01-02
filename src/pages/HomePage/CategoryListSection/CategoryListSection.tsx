@@ -9,19 +9,19 @@ export const CategoryListSection: React.FC = () => {
             <div className={styles.list}>
                 <div className={styles.item}>
                     <div className={styles.image}>
-                        <img />
+                        <img src="/images/320x386/232323/FFFFFF.png" alt="Dining image" />
                     </div>
                     <div className={styles.caption}>Dining</div>
                 </div>
                 <div className={styles.item}>
                     <div className={styles.image}>
-                        <img />
+                        <img src="/images/320x386/232323/FFFFFF.png" alt="Living image" />
                     </div>
                     <div className={styles.caption}>Living</div>
                 </div>
                 <div className={styles.item}>
                     <div className={styles.image}>
-                        <img />
+                        <img src="/images/320x386/232323/FFFFFF.png" alt="Bedroom image" />
                     </div>
                     <div className={styles.caption}>Bedroom</div>
                 </div>

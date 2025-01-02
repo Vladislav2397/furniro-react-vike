@@ -21,8 +21,10 @@ export type ProductCardProps = {
 export const ProductCard: React.FC<React.PropsWithChildren<ProductCardProps>> = ({ product, children, onClickOverlay, className }) => {
     return (
         <div className={clsx(styles.root, className)}>
-            <div className={styles.image}>
-                <img src={product.coverUrl} alt={'cover'} />
+            <div className={styles.cover}>
+                <div className={styles.image}>
+                    <img src={product.coverUrl} alt={'cover'} />
+                </div>
             </div>
             <div className={styles.content}>
                 <Link href={`/shop/${product.id}`}>

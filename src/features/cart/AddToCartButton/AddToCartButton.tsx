@@ -8,11 +8,13 @@ export type AddToCartButtonProps = {
     product: any
 }
 
-export const AddToCartButton: React.FC<AddToCartButtonProps> = () => {
+export const AddToCartButton: React.FC<AddToCartButtonProps> = ({ product }) => {
     const [addToCart] = useUnit([model.addToCartClicked])
 
+    const add = () => addToCart(product)
+
     return (
-        <button className={styles.root} onClick={addToCart}>
+        <button className={styles.root} onClick={add}>
             Add to cart
         </button>
     )

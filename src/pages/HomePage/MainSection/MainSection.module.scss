@@ -1,18 +1,33 @@
 .root {
-    background-color: #ccc;
     padding-left: 100px;
     padding-right: 100px;
+    position: relative;
+    overflow: hidden;
 }
 
 .wrapper {
     aspect-ratio: 1440/717;
     width: 100%;
-    position: relative;
     padding-top: 157px;
     padding-bottom: 117px;
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index: -1;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 }
 
 .card {

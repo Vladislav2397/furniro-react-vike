@@ -41,9 +41,17 @@
 .image {
     aspect-ratio: 398/480;
     width: 100%;
+    max-width: 100%;
     background-color: #ccc;
     border-radius: 12px;
     overflow: hidden;
+    position: relative;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 }
 
 .caption {

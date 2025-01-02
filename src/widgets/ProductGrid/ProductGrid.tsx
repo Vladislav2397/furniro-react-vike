@@ -23,7 +23,7 @@ export const ProductGrid: React.FC<ProductGridProps> = ({ className }) => {
             value: 200,
             currency: 'usd',
         },
-        coverUrl: 'https://via.placeholder.com/150',
+        coverUrl: '/images/285x300/232323/FFFFFF.png',
     } as Product
 
     const renderItem = (_: number, index: number) => (
