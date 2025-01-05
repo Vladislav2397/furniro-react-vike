@@ -1,11 +1,9 @@
-import { createStore, sample } from "effector"
+import { sample } from "effector"
 
 import { pageStarted } from "./init"
+import { getProductListQuery } from "~/shared/api/queries/product"
 
-export const $wasInitialized = createStore(false)
-
-sample({
-    clock: pageStarted,
-    fn: () => true,
-    target: $wasInitialized,
-})
+// sample({
+//     clock: pageStarted,
+//     target: getProductListQuery.start,
+// })

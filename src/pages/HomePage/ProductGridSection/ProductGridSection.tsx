@@ -13,9 +13,3 @@ export const ProductGridSection: React.FC = () => {
         </div>
     )
 }
-
-const ProductCard: React.FC<{ className?: string }> = ({ className }) => {
-    return (
-        <div className={className}></div>
-    )
-}

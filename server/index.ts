@@ -21,5 +21,6 @@ process.on("SIGINT", async () => {
 
 process.on("SIGTERM", async () => {
   console.info(`\r\nReceived signal: SIGTERM. Killing immediately...`);
+  await server.close();
   process.exit(0);
 });

@@ -1,32 +1,22 @@
 import React from 'react'
-import styles from './ProductGrid.module.scss'
 import clsx from 'clsx'
-import { ProductCard, type Product } from '~/entities/product'
+import { useUnit } from 'effector-react'
+
 import { AddToCartButton } from '~/features/cart/AddToCartButton'
-import { AddToFavoriteButton } from '~/features/cart/AddToFavoriteButton'
-import { Link } from '~/shared/routing'
+
+import { ProductCard } from '~/entities/product'
+
+import styles from './ProductGrid.module.scss'
+import * as model from './model'
 
 export type ProductGridProps = {
     className?: string
 }
 
 export const ProductGrid: React.FC<ProductGridProps> = ({ className }) => {
-    const product = {
-        id: 1,
-        name: 'Product 1',
-        description: 'Description 1',
-        price: {
-            value: 100,
-            currency: 'usd',
-        },
-        oldPrice: {
-            value: 200,
-            currency: 'usd',
-        },
-        coverUrl: '/images/285x300/232323/FFFFFF.png',
-    } as Product
+    const [list] = useUnit([model.$products])
 
-    const renderItem = (_: number, index: number) => (
+    const renderItem = (product: any, index: number) => (
         <ProductCard key={index} className={styles.item} product={product}>
             <AddToCartButton product={product} />
         </ProductCard>
@@ -35,7 +25,7 @@ export const ProductGrid: React.FC<ProductGridProps> = ({ className }) => {
     return (
         <div className={clsx(styles.root, className)}>
             <div className={styles.grid}>
-                {new Array(7).fill(0).map(renderItem)}
+                {list.map(renderItem)}
             </div>
         </div>
     )
