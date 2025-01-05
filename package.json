@@ -5,8 +5,10 @@
     "description": "Template for quickly starting a SSR Node.js application with vite, react, effector, and fastify",
     "packageManager": "pnpm@9.7.1+sha256.46f1bbc8f8020aa9869568c387198f1a813f21fb44c82f400e7d1dbde6c70b40",
     "scripts": {
-        "env:dev": "dotenvx run -f .env.development.local -f .env.development --",
-        "dev": "npm run env:dev -- node --no-warnings --loader ts-node/esm server/index.ts",
+        "env:dev": "dotenvx run -f .env.development.local -f .env.development",
+        "env:prod": "dotenvx run -f .env.production.local -f .env.production",
+        "dev": "pnpm run env:dev -- node --no-warnings --loader ts-node/esm server/index.ts",
+        "prod": "pnpm run build && pnpm run env:prod -- node ./dist/cli/index",
         "start": "cross-env NODE_ENV=production pnpm run server",
         "server": "node ./dist/cli/index",
         "build": "vite build && tsc -p server",
