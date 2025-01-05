@@ -1,13 +1,18 @@
-import path from "node:path"
+import path from "node:path";
 
-import type { CookieSerializeOptions } from "@fastify/cookie"
-import "dotenv/config"
-import fastify from "fastify"
-import type { FastifyReply, FastifyRequest } from "fastify"
-import { renderPage } from "vike/server"
 
-import { CONFIG } from "./config.js"
-import { directoryRoot } from "./directory-root.js"
+
+import type { CookieSerializeOptions } from "@fastify/cookie";
+import "dotenv/config";
+import fastify from "fastify";
+import type { FastifyReply, FastifyRequest } from "fastify";
+import { renderPage } from "vike/server";
+
+
+
+import { CONFIG } from "./config.js";
+import { directoryRoot } from "./directory-root.js";
+
 
 export async function createServer(isProduction: boolean) {
     const app = fastify({
@@ -78,6 +83,10 @@ export async function createServer(isProduction: boolean) {
     } // !isProduction
 
     // Any custom middlewares here. Like API middlewares, etc.
+    // await app.register(import("@fastify/http-proxy"), {
+    //     upstream: "http://localhost:4001/api",
+    //     prefix: "/api", // optional
+    // })
 
     // Vike middleware. It should always be our last middleware
     // (because it's a catch-all middleware superseding any middleware placed after it).

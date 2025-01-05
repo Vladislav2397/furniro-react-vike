@@ -1,6 +1,5 @@
 import * as cartModel from '~/entities/cart/model';
 import { createEffect, createEvent, sample } from "effector";
-import { debug } from "patronum"
 import type { CartItem } from '~/shared/api/types';
 
 type Product = any
@@ -26,8 +25,4 @@ sample({
     source: cartModel.$cart,
     fn: cartModel.addItemToCart,
     target: cartModel.$cart,
-})
-debug({
-    addToCartClicked,
-    $cart: cartModel.$cart,
 })

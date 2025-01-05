@@ -1,4 +1,4 @@
-import { concurrency, createJsonQuery } from "@farfetched/core"
+import { cache, concurrency, createQuery } from "@farfetched/core"
 import { arr, num, obj } from "@withease/contracts"
 
 export const getProductListResponseContract = obj({
@@ -6,19 +6,20 @@ export const getProductListResponseContract = obj({
     total: num,
 })
 
-export const getProductListQuery = createJsonQuery({
-    request: {
-        url: '/api/v1/products',
-        method: 'GET',
-    },
-    response: {
-        contract: getProductListResponseContract,
+export const getProductListQuery = createQuery({
+    handler: async () => {
+        const response = await fetch('http://localhost:4001/api/v1/products')
+
+        const data = await response.json()
+
+        if (!getProductListResponseContract.isData(data)) {
+            throw new Error('Invalid response')
+        }
+
+        return data
     },
     name: 'get-product-list',
 })
 
-getProductListQuery.finished.failure.watch((state) => {
-    console.log('getProductListQuery finished', state)
-})
-
 concurrency(getProductListQuery, { strategy: "TAKE_LATEST" });
+cache(getProductListQuery, { staleAfter: '10min' })
