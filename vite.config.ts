@@ -1,14 +1,11 @@
-import { dirname, resolve } from "node:path";
-import { fileURLToPath } from "node:url";
+import { dirname, resolve } from "node:path"
+import { fileURLToPath } from "node:url"
 
-
-
-import react from "@vitejs/plugin-react";
-import vike from "vike/plugin";
-import { defineConfig } from "vite";
-import prettyModuleClassnames from "vite-plugin-pretty-module-classnames";
-import svgr from "vite-plugin-svgr";
-
+import react from "@vitejs/plugin-react"
+import vike from "vike/plugin"
+import { defineConfig } from "vite"
+// import prettyModuleClassnames from "vite-plugin-pretty-module-classnames"
+import svgr from "vite-plugin-svgr"
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
@@ -29,7 +26,6 @@ export default defineConfig({
         svgr({
             svgrOptions: {},
         }),
-        prettyModuleClassnames(),
     ],
     server: {
         port: 5173,
@@ -55,6 +51,9 @@ export default defineConfig({
             scss: {
                 api: "modern-compiler", // or "modern"
             },
+        },
+        modules: {
+            generateScopedName: "[name]__[local]__[hash:base64:5]",
         },
     },
     define: {},
