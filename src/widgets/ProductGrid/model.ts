@@ -1,6 +1,8 @@
 import { createStore, sample } from "effector"
 import { getProductListQuery } from "~/shared/api/queries/product"
 
+export const pageStarted = getProductListQuery.start
+
 export const $products = createStore<any[]>([])
 
 sample({

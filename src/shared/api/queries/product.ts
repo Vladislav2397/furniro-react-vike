@@ -8,7 +8,7 @@ export const getProductListResponseContract = obj({
 
 export const getProductListQuery = createQuery({
     handler: async () => {
-        const response = await fetch('http://localhost:4001/api/v1/products')
+        const response = await fetch('/rest-api/v1/products')
 
         const data = await response.json()
 

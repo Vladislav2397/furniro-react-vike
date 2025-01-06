@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import clsx from 'clsx'
 import { useUnit } from 'effector-react'
 
@@ -14,7 +14,11 @@ export type ProductGridProps = {
 }
 
 export const ProductGrid: React.FC<ProductGridProps> = ({ className }) => {
-    const [list] = useUnit([model.$products])
+    const [list, mounted] = useUnit([model.$products, model.pageStarted])
+
+    useEffect(() => {
+        mounted()
+    }, [])
 
     const renderItem = (product: any, index: number) => (
         <ProductCard key={index} className={styles.item} product={product}>
